@@ -1,0 +1,166 @@
+/* Port Killer - Estilos CSS personalizados */
+
+/* Ventana principal */
+window {
+  background-color: @window_bg_color;
+}
+
+/* Filas de puertos */
+.port-row {
+  padding: 8px;
+  border-radius: 6px;
+  transition: background-color 200ms;
+}
+
+.port-row:hover {
+  background-color: alpha(@accent_color, 0.1);
+}
+
+/* Número de puerto */
+.port-number {
+  font-weight: bold;
+  font-size: 1.1em;
+  color: @accent_color;
+  font-family: monospace;
+}
+
+/* Nombre del proceso */
+.process-name {
+  font-weight: 600;
+  font-size: 0.95em;
+}
+
+/* Línea de comando */
+.command-line {
+  font-size: 0.85em;
+  color: @window_fg_color;
+  opacity: 0.7;
+  font-family: monospace;
+}
+
+/* PID label */
+.pid-label {
+  font-size: 0.85em;
+  color: @window_fg_color;
+  opacity: 0.8;
+  font-family: monospace;
+  padding: 4px 8px;
+  background-color: alpha(@window_fg_color, 0.05);
+  border-radius: 4px;
+}
+
+/* Badges */
+.protected-badge,
+.dev-badge {
+  font-size: 0.7em;
+  font-weight: bold;
+  padding: 2px 6px;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+
+.protected-badge {
+  background-color: @error_color;
+  color: white;
+}
+
+.dev-badge {
+  background-color: @accent_color;
+  color: white;
+}
+
+/* Toolbar */
+.toolbar {
+  background-color: alpha(@window_fg_color, 0.02);
+  border-bottom: 1px solid alpha(@window_fg_color, 0.1);
+  padding: 8px;
+}
+
+/* Action bar */
+.action-bar {
+  background-color: alpha(@window_fg_color, 0.02);
+  border-top: 1px solid alpha(@window_fg_color, 0.1);
+  padding: 8px;
+}
+
+/* Port count label */
+.port-count {
+  font-weight: 600;
+  font-size: 0.9em;
+  color: @accent_color;
+}
+
+/* Empty state */
+.empty-state {
+  font-size: 1.2em;
+  color: @window_fg_color;
+  opacity: 0.5;
+}
+
+/* Destructive button */
+button.destructive-action {
+  background-color: @error_color;
+  color: white;
+}
+
+button.destructive-action:hover {
+  background-color: shade(@error_color, 0.9);
+}
+
+button.destructive-action:active {
+  background-color: shade(@error_color, 0.8);
+}
+
+/* Separadores más sutiles */
+separator {
+  background-color: alpha(@window_fg_color, 0.05);
+}
+
+/* Scrollbar más delgada */
+scrollbar {
+  background-color: transparent;
+}
+
+scrollbar slider {
+  background-color: alpha(@window_fg_color, 0.2);
+  border-radius: 10px;
+  min-width: 6px;
+  min-height: 6px;
+}
+
+scrollbar slider:hover {
+  background-color: alpha(@window_fg_color, 0.3);
+}
+
+/* Check buttons en el filtro */
+checkbutton {
+  padding: 4px 8px;
+}
+
+checkbutton:checked {
+  background-color: alpha(@accent_color, 0.1);
+  border-radius: 4px;
+}
+
+/* Mejorar iconos */
+image {
+  opacity: 0.9;
+}
+
+button image {
+  opacity: 1;
+}
+
+/* Header bar */
+headerbar {
+  background-color: @headerbar_bg_color;
+  border-bottom: 1px solid alpha(@window_fg_color, 0.1);
+}
+
+/* Animaciones suaves */
+* {
+  transition: background-color 200ms ease-out,
+              color 200ms ease-out,
+              border-color 200ms ease-out,
+              opacity 200ms ease-out;
+}
