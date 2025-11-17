@@ -2,6 +2,10 @@
 
 Gestor ligero de puertos para Linux. Permite identificar y finalizar procesos que ocupan puertos de forma rápida y visual, especialmente útil durante el desarrollo de software.
 
+![Interfaz principal de Port Killer](assets/IDE.png)
+
+![System Tray Indicator](assets/tray.png)
+
 ## TABLA DE CONTENIDOS
 
 - [Características](#características)
@@ -227,8 +231,7 @@ graph TD
     D --> E
 
     E --> F[psutil]
-    F --> G[/proc/net/tcp]
-    F --> H[/proc/PID/cmdline]
+    F --> G["Sistema de archivos /proc"]
 
     E --> I[Señales POSIX]
     I --> J[SIGTERM]
@@ -308,11 +311,11 @@ sequenceDiagram
     Usuario->>GUI/CLI: Solicitar lista de puertos
     GUI/CLI->>PortManager: get_listening_ports()
     PortManager->>psutil: net_connections(kind='inet')
-    psutil->>Kernel: Leer /proc/net/tcp
+    psutil->>Kernel: Leer sistema de archivos proc
     Kernel-->>psutil: Conexiones activas
     psutil-->>PortManager: Lista de conexiones
     PortManager->>psutil: Process(pid).cmdline()
-    psutil->>Kernel: Leer /proc/PID/cmdline
+    psutil->>Kernel: Leer información del proceso
     Kernel-->>psutil: Línea de comando
     psutil-->>PortManager: Información del proceso
     PortManager->>PortManager: Humanizar descripción
